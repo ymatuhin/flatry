@@ -1,6 +1,6 @@
 # Flatry
 
-Flatry converting promise or function to flat response with array like `[err, response]`
+Flatry converting promise or function to flat response with array like response `[err, result]`.
 Inspired by golang style error handling without try/catch.
 
 ## Examples
