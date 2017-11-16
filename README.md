@@ -5,7 +5,7 @@ Inspired by golang style error handling without try/catch.
 
 ## Examples
 
-### With async/await
+### Asynchronous (async/await)
 
 Before:
 ```js
@@ -28,8 +28,8 @@ async asyncData({ app, error }) {
 }
 ```
 
-### Sync
 
+### Synchronous
 
 Before:
 ```js
