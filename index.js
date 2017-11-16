@@ -1,5 +1,5 @@
 const isFunction = fn => typeof fn === 'function';
-const isPromise = fn => fn.then && isFunction(fn);
+const isPromise = fn => fn.then && isFunction(fn.then);
 
 function flatrySync(fn) {
   try {

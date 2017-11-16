@@ -1,8 +1,8 @@
 {
   "name": "flatry",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description":
-    "Flatry converting promise or function to flat response with array. Inspired by golang style error handling without try/catch.",
+    "Flatry converting promise or function to flat array response. Inspired by golang style error handling without try/catch.",
   "keywords": [
     "flat",
     "flatten",
@@ -17,7 +17,7 @@
   ],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --maxWorkers 4"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/ymatuhin/flatry/issues"
   },
-  "homepage": "https://github.com/ymatuhin/flatry#readme"
+  "homepage": "https://github.com/ymatuhin/flatry#readme",
+  "dependencies": {
+    "jest": "^21.2.1"
+  }
 }
