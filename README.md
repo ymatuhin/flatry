@@ -17,7 +17,6 @@ yarn add flatry
 
 ## Use
 
-Usage also as usual
 ```js
 const flatry = require('flatry');
 ```
