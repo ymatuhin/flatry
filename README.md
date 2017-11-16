@@ -8,22 +8,17 @@ Inspired by golang style error handling without try/catch.
 
 ```bash
 npm install flatry
-```
-or
-```bash
+# or
 yarn add flatry
 ```
 
 
 ## Use
 
-Usage also as usual
-```js
-const flatry = require('flatry');
-```
-or
 ```js
 import flatry from 'flatry';
+// or
+const flatry = require('flatry');
 ```
 
 
