@@ -1,7 +1,20 @@
 {
   "name": "flatry",
   "version": "1.0.0",
-  "description": "",
+  "description":
+    "Flatry converting promise or function to flat response with array. Inspired by golang style error handling without try/catch.",
+  "keywords": [
+    "flat",
+    "flatten",
+    "promise",
+    "async",
+    "await",
+    "golang",
+    "error handling",
+    "destructuring",
+    "try",
+    "catch"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
