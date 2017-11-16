@@ -3,6 +3,13 @@
 Flatry converting promise or function to flat response with array like response `[err, result]`.
 Inspired by golang style error handling without try/catch.
 
+
+## Install and usage
+
+Just install as usual with `npm install flatry` or `yarn add flatry`.
+And require module `const flatry = require('flatry')` or `import flatry from 'flatry'`.
+
+
 ## Examples
 
 ### Asynchronous (async/await)
