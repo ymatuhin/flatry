@@ -18,6 +18,7 @@ npm install flatry
 yarn add flatry
 ```
 
+&nbsp;
 
 ## Use
 
@@ -27,6 +28,7 @@ import flatry from 'flatry';
 const flatry = require('flatry');
 ```
 
+&nbsp;
 
 ## Examples
 
