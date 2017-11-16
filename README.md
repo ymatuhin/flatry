@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/ymatuhin/flatry.svg?branch=master)](https://travis-ci.org/ymatuhin/flatry)
 
 Flatry converting promise or function to flat array response like `[err, result]`.
+
 Inspired by golang style error handling without try/catch.
 
 
