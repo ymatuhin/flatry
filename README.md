@@ -8,6 +8,7 @@ Flatry (flat try) converting promise or function to flat array response like `[e
 
 Inspired by golang style error handling without try/catch.
 
+&nbsp;
 
 ## Install
 
