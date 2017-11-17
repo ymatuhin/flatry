@@ -1,7 +1,3 @@
-function isPromise(fn) {
-  return fn.then && typeof fn.then === 'function';
-}
-
 function flatrySync(fn) {
   try {
     return [null, fn()];
@@ -11,18 +7,15 @@ function flatrySync(fn) {
 }
 
 function flatry(fn) {
-  if (isPromise(fn)) {
-    return fn.then(
-      function(value) {
-        return [null, value];
-      },
-      function(err) {
-        return [err, null];
-      },
-    );
-  }
+  var isPromise = fn.then && typeof fn.then === 'function';
+  var successFn = function(value) {
+    return [null, value];
+  };
+  var errorFn = function(err) {
+    return [err, null];
+  };
 
-  return flatrySync(fn);
+  return isPromise ? fn.then(successFn, errorFn) : flatrySync(fn);
 }
 
 module.exports = flatry;
