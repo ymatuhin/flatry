@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/ymatuhin/flatry/branch/master/graph/badge.svg)](https://codecov.io/gh/ymatuhin/flatry)
 [![GitHub license](https://img.shields.io/github/license/ymatuhin/flatry.svg)](https://github.com/ymatuhin/flatry/blob/master/LICENSE)
 
-Flatry (flat try) converting promise or function to flat array response like `[err, result]`.
+Flatry (flat try) converting promise or function to flat array response with `[err, result]`.
 
 Inspired by golang style error handling without try/catch.
 
