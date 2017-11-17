@@ -29,7 +29,7 @@
     "url": "https://github.com/ymatuhin/flatry/issues"
   },
   "homepage": "https://github.com/ymatuhin/flatry#readme",
-  "dependencies": {
+  "devDependencies": {
     "codecov": "^3.0.0",
     "jest": "^21.2.1"
   },
