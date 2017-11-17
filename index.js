@@ -1,5 +1,5 @@
 function isPromise(fn) {
-  return fn.then && typeof fn === 'function';
+  return fn.then && typeof fn.then === 'function';
 }
 
 function flatrySync(fn) {
@@ -11,7 +11,7 @@ function flatrySync(fn) {
 }
 
 function flatry(fn) {
-  if (isPromise(fn))
+  if (isPromise(fn)) {
     return fn.then(
       function(value) {
         return [null, value];
@@ -20,6 +20,7 @@ function flatry(fn) {
         return [err, null];
       },
     );
+  }
 
   return flatrySync(fn);
 }
