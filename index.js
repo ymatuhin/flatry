@@ -1,5 +1,6 @@
-const isFunction = fn => typeof fn === 'function';
-const isPromise = fn => fn.then && isFunction(fn.then);
+function isPromise(fn) {
+  return fn.then && typeof fn === 'function';
+}
 
 function flatrySync(fn) {
   try {
@@ -10,7 +11,16 @@ function flatrySync(fn) {
 }
 
 function flatry(fn) {
-  if (isPromise(fn)) return fn.then(value => [null, value], err => [err, null]);
+  if (isPromise(fn))
+    return fn.then(
+      function(value) {
+        return [null, value];
+      },
+      function(err) {
+        return [err, null];
+      },
+    );
+
   return flatrySync(fn);
 }
 
