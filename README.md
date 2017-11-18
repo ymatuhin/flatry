@@ -34,6 +34,8 @@ const flatry = require('flatry');
 
 ![Flatry example](https://raw.githubusercontent.com/ymatuhin/flatry/master/example.png)
 
+&nbsp;
+
 ### Asynchronous (async/await)
 
 Before:
