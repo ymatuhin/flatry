@@ -38,8 +38,9 @@ const flatry = require('flatry');
 
 ### Asynchronous (async/await)
 
-Before:
+
 ```js
+// Before
 async asyncData({ app, error }) {
   try {
     const categories = (await app.$axios.$get('forum')).sections;
@@ -48,10 +49,8 @@ async asyncData({ app, error }) {
     return error({ statusCode: err.statusCode });
   }
 }
-```
 
-After:
-```js
+// After
 async asyncData({ app, error }) {
   const [err, res] = await flatry(app.$axios.$get('forum'));
   if (err) return error({ statusCode: err.statusCode });
@@ -62,30 +61,18 @@ async asyncData({ app, error }) {
 
 ### Synchronous
 
-Before:
 ```js
-function throwErrorIn10percent() {
-  if (Math.random() > 0.9) throw new Error('Random error');
-  return true;
-}
-
+// Before
 let result = false;
 try {
-    result = throwErrorIn10percent()
+    result = mayThrowErrorSomeday()
 } catch (error) {
     console.log('Error catched', error)
 }
 console.log('result', result);
-```
 
-After:
-```js
-function throwErrorIn10percent() {
-  if (Math.random() > 0.9) throw new Error('Random error');
-  return true;
-}
-
-const [err, result] = flatry(throwErrorIn10percent);
+// After
+const [err, result] = flatry(mayThrowErrorSomeday);
 if (err) console.log('Error catched', err)
 console.log('result', result);
 ```
