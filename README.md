@@ -50,6 +50,7 @@ async asyncData({ app, error }) {
   }
 }
 
+
 // After
 async asyncData({ app, error }) {
   const [err, res] = await flatry(app.$axios.$get('forum'));
@@ -70,6 +71,7 @@ try {
     console.log('Error catched', error)
 }
 console.log('result', result);
+
 
 // After
 const [err, result] = flatry(mayThrowErrorSomeday);
