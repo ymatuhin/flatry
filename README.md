@@ -1,4 +1,4 @@
-# Flatry 
+# Flatry
 
 [![Build Status](https://travis-ci.org/ymatuhin/flatry.svg?branch=master)](https://travis-ci.org/ymatuhin/flatry)
 [![codecov](https://codecov.io/gh/ymatuhin/flatry/branch/master/graph/badge.svg)](https://codecov.io/gh/ymatuhin/flatry)
@@ -31,6 +31,8 @@ const flatry = require('flatry');
 &nbsp;
 
 ## Examples
+
+![Flatry example](https://raw.githubusercontent.com/ymatuhin/flatry/master/example.png)
 
 ### Asynchronous (async/await)
 
