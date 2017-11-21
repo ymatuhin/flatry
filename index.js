@@ -1,3 +1,5 @@
+const isPromise = require('is-promise');
+
 function flatrySync(fn) {
   try {
     return [null, fn()];
@@ -7,10 +9,10 @@ function flatrySync(fn) {
 }
 
 function flatry(fn) {
-  if (typeof fn !== 'function' && typeof fn !== 'object') {
+  if (typeof fn !== 'function' && !isPromise(fn)) {
     throw new Error('Argument must be a function or Promise');
   }
-  var isPromise = fn.then && typeof fn.then === 'function';
+
   var successFn = function(value) {
     return [null, value];
   };
@@ -18,7 +20,7 @@ function flatry(fn) {
     return [err, null];
   };
 
-  return isPromise ? fn.then(successFn, errorFn) : flatrySync(fn);
+  return isPromise(fn) ? fn.then(successFn, errorFn) : flatrySync(fn);
 }
 
 module.exports = flatry;

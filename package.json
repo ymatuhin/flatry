@@ -37,5 +37,8 @@
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
+  },
+  "dependencies": {
+    "is-promise": "^2.1.0"
   }
 }
