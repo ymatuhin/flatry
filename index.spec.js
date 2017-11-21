@@ -31,3 +31,7 @@ test('async', async () => {
   expect(resp1).toBe(1);
   expect(resp2).toBeNull();
 });
+
+test('should throw exception if arg not a function', () => {
+  expect(() => flatry(undefined)).toThrow();
+});
