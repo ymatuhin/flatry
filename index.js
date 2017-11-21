@@ -7,6 +7,9 @@ function flatrySync(fn) {
 }
 
 function flatry(fn) {
+  if (typeof fn !== 'function' && typeof fn !== 'object') {
+    throw new Error('Argument must be a function or Promise');
+  }
   var isPromise = fn.then && typeof fn.then === 'function';
   var successFn = function(value) {
     return [null, value];
