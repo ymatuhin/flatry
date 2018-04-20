@@ -13,10 +13,10 @@ test('sync', () => {
   const [err1, resp1] = flatry(testSuccessFn);
   const [err2, resp2] = flatry(testErrorFn);
 
-  expect(err1).toBeNull();
+  expect(err1).toBeUndefined();
   expect(err2).toBeDefined();
   expect(resp1).toBe(1);
-  expect(resp2).toBeNull();
+  expect(resp2).toBeUndefined();
 });
 
 test('async', async () => {
@@ -26,10 +26,10 @@ test('async', async () => {
   const [err1, resp1] = await flatry(testSuccessFn);
   const [err2, resp2] = await flatry(testErrorFn);
 
-  expect(err1).toBeNull();
+  expect(err1).toBeUndefined();
   expect(err2).toBeDefined();
   expect(resp1).toBe(1);
-  expect(resp2).toBeNull();
+  expect(resp2).toBeUndefined();
 });
 
 test('should throw exception if arg not a function', () => {
