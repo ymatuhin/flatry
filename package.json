@@ -1,6 +1,6 @@
 {
   "name": "flatry",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Flatry converting promise or function to flat array response. Inspired by golang style error handling without try/catch.",
   "keywords": [
     "flat",
