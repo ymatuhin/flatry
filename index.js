@@ -2,9 +2,9 @@ var isPromise = require('is-promise');
 
 function flatrySync(fn) {
   try {
-    return [void 0, fn()];
+    return [null, fn()];
   } catch (err) {
-    return [err, void 0];
+    return [err];
   }
 }
 
@@ -14,10 +14,10 @@ module.exports = function flatry(fn) {
   }
 
   var successFn = function(value) {
-    return [void 0, value];
+    return [null, value];
   };
   var errorFn = function(err) {
-    return [err, void 0];
+    return [err];
   };
 
   return isPromise(fn) ? fn.then(successFn, errorFn) : flatrySync(fn);
