@@ -1,7 +1,6 @@
 # Flatry
 
 [![Build Status](https://travis-ci.org/ymatuhin/flatry.svg?branch=master)](https://travis-ci.org/ymatuhin/flatry)
-[![codecov](https://codecov.io/gh/ymatuhin/flatry/branch/master/graph/badge.svg)](https://codecov.io/gh/ymatuhin/flatry)
 [![GitHub license](https://img.shields.io/github/license/ymatuhin/flatry.svg)](https://github.com/ymatuhin/flatry/blob/master/LICENSE)
 
 Flatry (flat try) converting promise or function to flat array response with `[err, result]`.
@@ -23,9 +22,9 @@ yarn add flatry
 ## Use
 
 ```js
-import flatry from 'flatry';
+import flatry from "flatry";
 // or
-const flatry = require('flatry');
+const flatry = require("flatry");
 ```
 
 &nbsp;
@@ -37,7 +36,6 @@ const flatry = require('flatry');
 &nbsp;
 
 ### Asynchronous (async/await)
-
 
 ```js
 // Before
@@ -59,22 +57,20 @@ async asyncData({ app, error }) {
 }
 ```
 
-
 ### Synchronous
 
 ```js
 // Before
 let result = false;
 try {
-    result = mayThrowErrorSomeday()
+  result = mayThrowErrorSomeday();
 } catch (error) {
-    console.log('Error catched', error)
+  console.log("Error catched", error);
 }
-console.log('result', result);
-
+console.log("result", result);
 
 // After
 const [err, result] = flatry(mayThrowErrorSomeday);
-if (err) console.log('Error catched', err)
-console.log('result', result);
+if (err) console.log("Error catched", err);
+console.log("result", result);
 ```

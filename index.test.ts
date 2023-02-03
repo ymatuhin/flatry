@@ -1,13 +1,13 @@
-const flatry = require('./index');
+import flatry from "./index";
 
-test('imported', () => {
-  expect(typeof flatry).toBe('function');
+test("imported", () => {
+  expect(typeof flatry).toBe("function");
 });
 
-test('sync', () => {
+test("sync", () => {
   const testSuccessFn = () => 1;
   const testErrorFn = () => {
-    throw new Error('Oops...');
+    throw new Error("Oops...");
   };
 
   const [err1, resp1] = flatry(testSuccessFn);
@@ -19,9 +19,9 @@ test('sync', () => {
   expect(resp2).toBeUndefined();
 });
 
-test('async', async () => {
+test("async", async () => {
   const testSuccessFn = Promise.resolve(1);
-  const testErrorFn = Promise.reject(new Error('Oops...'));
+  const testErrorFn = Promise.reject(new Error("Oops..."));
 
   const [err1, resp1] = await flatry(testSuccessFn);
   const [err2, resp2] = await flatry(testErrorFn);
@@ -32,6 +32,7 @@ test('async', async () => {
   expect(resp2).toBeUndefined();
 });
 
-test('should throw exception if arg not a function', () => {
+test("should throw exception if arg not a function", () => {
+  // @ts-ignore
   expect(() => flatry(undefined)).toThrow();
 });
