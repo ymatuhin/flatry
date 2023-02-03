@@ -1,7 +1,5 @@
 "use strict";
 exports.__esModule = true;
-// @ts-ignore
-var is_promise_1 = require("is-promise");
 function flatryFunction(fn) {
     try {
         return [null, fn()];
@@ -23,7 +21,7 @@ function flatry(functionOrPromise) {
     if (typeof functionOrPromise === "function") {
         return flatryFunction(functionOrPromise);
     }
-    if ((0, is_promise_1["default"])(functionOrPromise)) {
+    if (Promise.resolve(functionOrPromise) === functionOrPromise) {
         return flatryPromise(functionOrPromise);
     }
     throw new Error("Argument must be a function or Promise");

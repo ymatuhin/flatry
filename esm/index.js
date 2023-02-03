@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 function flatryFunction(fn) {
     try {
         return [null, fn()];
@@ -15,7 +17,7 @@ function flatryPromise(promise) {
     };
     return promise.then(successFn, errorFn);
 }
-export default function flatry(functionOrPromise) {
+function flatry(functionOrPromise) {
     if (typeof functionOrPromise === "function") {
         return flatryFunction(functionOrPromise);
     }
@@ -24,3 +26,4 @@ export default function flatry(functionOrPromise) {
     }
     throw new Error("Argument must be a function or Promise");
 }
+exports["default"] = flatry;

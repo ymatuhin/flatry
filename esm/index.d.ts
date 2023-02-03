@@ -1,4 +1,2 @@
-type FlatryFn<Result extends unknown> = () => Result;
-export default function flatry<Result>(fn: FlatryFn<Result>): readonly [null, Result] | readonly [unknown];
-export default function flatry<Error, Result>(promise: Promise<Result>): Promise<readonly [null, Result] | readonly [Error]>;
-export {};
+export default function flatry<T>(promise: Promise<T>): Promise<[unknown, never] | [null, T]>;
+export default function flatry<T>(fn: () => T): [unknown, never] | [null, T];
