@@ -7,27 +7,27 @@ function flatryFunction<Result>(fn: FlatryFn<Result>) {
   }
 }
 
-function flatryPromise<Error, Result>(promise: Promise<Result>) {
-  var successFn = function (value: Result) {
-    return [null, value] as const;
-  };
-  var errorFn = function (err: Error) {
-    return [err] as const;
-  };
-  return promise.then(successFn, errorFn);
+async function flatryPromise<Error, Result>(promise: PromiseLike<Result>) {
+  try {
+    const value = await promise;
+    return [null, value];
+  } catch (err) {
+    console.log('caught error')
+    return [err];
+  }
 }
 
 export default function flatry<T>(
-  promise: Promise<T>
+  promise: PromiseLike<T>
 ): Promise<[unknown, never] | [null, T]>;
 export default function flatry<T>(fn: () => T): [unknown, never] | [null, T];
 export default function flatry(functionOrPromise: any): any {
+  if (typeof functionOrPromise.then === "function") {
+    return flatryPromise(functionOrPromise);
+  }
+  
   if (typeof functionOrPromise === "function") {
     return flatryFunction(functionOrPromise);
-  }
-
-  if (Promise.resolve(functionOrPromise) === functionOrPromise) {
-    return flatryPromise(functionOrPromise);
   }
 
   throw new Error("Argument must be a function or Promise");
