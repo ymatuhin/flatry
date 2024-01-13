@@ -10,10 +10,9 @@ function flatryFunction<Result>(fn: FlatryFn<Result>) {
 async function flatryPromise<Error, Result>(promise: PromiseLike<Result>) {
   try {
     const value = await promise;
-    return [null, value];
+    return [null, value] as const;
   } catch (err) {
-    console.log('caught error')
-    return [err];
+    return [err] as const;
   }
 }
 
